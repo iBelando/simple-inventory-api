@@ -1,0 +1,112 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Thi is a simple service fon an inventory system",
+        "title": "Inventory API",
+        "contact": {},
+        "license": {},
+        "version": "1.0"
+    },
+    "host": "localhost:8000",
+    "basePath": "/",
+    "paths": {
+        "/inventory": {
+            "get": {
+                "description": "Get all the inventory's items",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Get all the inventory's items",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/main.Item"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Add a new item to the inventory",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Add a new item to the inventory",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/main.Item"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/inventory/{uid}": {
+            "put": {
+                "description": "Update an existing item from the inventory",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update an existing item from the inventory",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/main.Item"
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete an existing item from the inventory",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete an existing item from the inventory",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/main.Item"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "main.Item": {
+            "type": "object",
+            "properties": {
+                "Desc": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Price": {
+                    "type": "number"
+                },
+                "UID": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
